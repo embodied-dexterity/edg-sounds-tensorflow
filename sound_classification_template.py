@@ -148,11 +148,6 @@ def parse_audio_files(parent_dir,sub_dir_labels,file_ext="*.wav"):
             features = np.vstack([features,ext_features])
             labels = np.append(labels, label)
 
-    print("features:")
-    print(np.array(features))
-    print("labels:")
-    print(np.array(labels))
-
     return np.array(features), np.array(labels)
 
 # EXPLANATION: creates one hot encode bool (1/0) 2D matrix - this is fed into the neural network
@@ -182,11 +177,6 @@ ts_features, ts_labels = parse_audio_files(parent_dir,ts_sub_dirs_labels)
 num_training_classes = len(np.unique(tr_labels))
 tr_labels = one_hot_encode(tr_labels, num_training_classes)
 ts_labels = one_hot_encode(ts_labels, num_training_classes)
-
-print("tr_labels:")
-print(tr_labels)
-print("ts_labels:")
-print(ts_labels)
 
 
 ################################ NEURAL NETWORK ################################
@@ -326,5 +316,5 @@ if max_cost is None or max_cost == math.inf:
 plt.axis([0,training_epochs,0,max_cost])
 plt.show()
 
-recall, update_op = metrics.recall(y_true, y_pred)
-print("F-Score: {0:3f}".format(recall))
+# recall, update_op = metrics.recall(y_true, y_pred)
+# print("F-Score: {0:3f}".format(recall))
