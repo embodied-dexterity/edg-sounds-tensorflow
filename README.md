@@ -67,7 +67,7 @@ To play around with more data, you can download the [Urban Sound Data set](https
 
 ## Understanding the ML Sound Classification Process
 
-This is a step-by-step walk-through of the code to help any user develop an understanding of what the code is doing.
+This is a step-by-step walk-through of the code to help any user understand what the code is doing.
 
 ## Acknowledgments
 
