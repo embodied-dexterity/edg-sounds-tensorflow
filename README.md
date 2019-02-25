@@ -55,7 +55,7 @@ Class 2:
 	 most confused with: 0
 ```
 
-Currently, the accuracy per class and the class that it confused its test data with the most are displayed by visualize_results. Please email kafkaloff@berkeley.edu to request further features. 
+Currently, the accuracy and the class that each class confused its test data with the most are displayed by visualize_results. Please email kafkaloff@berkeley.edu to request further visualization and data features. 
 
 To play around with more data, you can download the [Urban Sound Data set](https://urbansounddataset.weebly.com/). 
 
