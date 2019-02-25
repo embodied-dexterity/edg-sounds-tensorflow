@@ -1,6 +1,6 @@
 # EDG Sound Classification Process
 
-The following describes all you'll need to know to start classifying sound data using Tensorflow with no prior coding experience necessary. Please email kafkaloff@berkeley.edu if you have any questions.
+The following describes everything that you'll need to know to start classifying sound data using Tensorflow with no prior coding experience necessary. Please email kafkaloff@berkeley.edu if you have any questions.
 
 ## Getting Started
 
