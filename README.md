@@ -38,8 +38,24 @@ python3 <file name>.py
 To get started, you need to have the sound_classification_template.py and sample sound sets (under Downloads) in the same directory. From there, you can run the following (processing the sound data will take around 5-10 min):
 
 ```
-python3 <file name>.py
+python3 sound_classification_template.py
 ```
+
+Expect to see a graph and data similar to the following:
+
+```
+Class 0: 
+	 accuracy: 1.000000 
+	 most confused with: None
+Class 1: 
+	 accuracy: 0.000000 
+	 most confused with: 0
+Class 2: 
+	 accuracy: 0.500000 
+	 most confused with: 0
+```
+
+Currently, the accuracy per class and the class that it confused its test data with the most are displayed by visualize_results. Please email kafkaloff@berkeley.edu to request further features. 
 
 To play around with more data, you can download the [Urban Sound Data set](https://urbansounddataset.weebly.com/). 
 
