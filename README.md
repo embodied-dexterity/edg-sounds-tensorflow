@@ -1,3 +1,3 @@
-### EDG Sound Classification Template
+## EDG Sound Classification Template
 
-# Getting Started
+#### Getting Started
