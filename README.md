@@ -33,11 +33,25 @@ To run a python file (*.py), enter the following in your terminal from the same 
 python3 <file name>.py
 ```
 
-## Running Template with Sample Sound Data
+## Training with Sample Sound Data
 
-## Configuring Template for ML Sound Classification and Preparing Sound Data
+To get started, you need to have the sound_classification_template.py and sample sound sets (under Downloads) in the same directory. From there, you can run the following (processing the sound data will take around 5-10 min):
+
+```
+python3 <file name>.py
+```
+
+To play around with more data, you can download the [Urban Sound Data set](https://urbansounddataset.weebly.com/). 
+
+## Training Your Neural Network
+
+### Template Configuration
+
+### Formatting/Preparing Your Sound Data
 
 ## Understanding the ML Sound Classification Process
+
+This is a step-by-step walk-through of the code to help any user develop an understanding of what the code is doing.
 
 ## Acknowledgments
 
