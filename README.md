@@ -22,7 +22,7 @@ pip install librosa
 #### Downloads
 
 * [Download Python 3](https://www.python.org/downloads/)
-* Download sound_classification_template.py (click on "Clone or Download")
+* [Download sound_classification_template.py](https://github.com/kris10akemi/edg-sounds-tensorflow) (click on "Clone or Download")
 * [Download sample sound sets](https://drive.google.com/drive/folders/14DmBB15mLApoZCy9pjt0y1hjFr-XVZ-H?usp=sharing)
 
 ### Running Python Files
