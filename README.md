@@ -4,13 +4,13 @@ The following describes everything that you'll need to know to start classifying
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. 
+These instructions will get you a copy of the project up and running on your local machine for development.
 
-### Prerequisites
+### Installations
 
-Things you need to install the software and how to install them
+Necessary files and software that you need to install/download and how to install/download them.
 
-#### Command-Line Installations
+#### Command Line Installations
 
 Run the following commands in your terminal:
 
@@ -26,6 +26,12 @@ pip install librosa
 * [Download sample sound sets](https://drive.google.com/drive/folders/14DmBB15mLApoZCy9pjt0y1hjFr-XVZ-H?usp=sharing)
 
 ### Running Python Files
+
+To run a python file (*.py), enter the following in your terminal from the same directory as the python file:
+
+```
+python3 <file name>.py
+```
 
 ## Running Template with Sample Sound Data
 
