@@ -54,6 +54,7 @@ Class 2:
 	 accuracy: 0.500000 
 	 most confused with: 0
 ```
+<img src="https://github.com/kris10akemi/edg-sounds-tensorflow/blob/master/sample_sound_sets_graph.png" width="400">
 
 Currently, the accuracy and the class that each class confused its test data with the most are displayed by visualize_results. Please email kafkaloff@berkeley.edu to request further visualization and data features. 
 
