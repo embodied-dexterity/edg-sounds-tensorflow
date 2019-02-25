@@ -4,7 +4,7 @@ The following describes everything that you'll need to know to start classifying
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development.
+These instructions will help you download all necessary software and files to start running the python template on your local machine for development.
 
 ### Installations
 
