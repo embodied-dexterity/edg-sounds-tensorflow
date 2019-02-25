@@ -70,6 +70,23 @@ To play around with more data, you can download the [Urban Sound Data set](https
 
 This is a step-by-step walk-through of the code to help any user understand what the code is doing.
 
+### Neural Net Configuration
+
+training_epochs (ADJUSTABLE): the number of times that the gradient descent optimizer sees ALL of the training data
+n_dim: the number of features that we are using to define our sound data
+n_classes: number of classes in our training set (how many categories we are classifying)
+learning_rate (ADJUSTABLE): how quickly our model learns from training data (or how much weight it gives each new sample)
+
+```
+training_epochs = 50
+n_dim = tr_features.shape[1]
+n_classes = len(np.unique(tr_labels))
+n_hidden_units_one = 280 # TODO: ADJUST ACCORDINGLY
+n_hidden_units_two = 300 # TODO: ADJUST ACCORDINGLY
+sd = 1 / np.sqrt(n_dim)
+learning_rate = 0.01 # TODO: ADJUST ACCORDINGLY
+```
+
 ## Acknowledgments
 
 * [Aaqib Saeed](http://aqibsaeed.github.io/2016-09-03-urban-sound-classification-part-1/)
