@@ -70,6 +70,32 @@ To play around with more data, you can download the [Urban Sound Data set](https
 
 This is a step-by-step walk-through of the code to help any user understand what the code is doing.
 
+### Extracting Sound Features 
+
+Sounds vary drastically, even within the same category (e.g. laughter from one person sounds different from another, but they should both be classified as laughter). Thus, we use features of sounds to define each sound sample as features are used to represent relative similarities. The more similar the features of two sounds are, the more likely they are part of the same category.
+
+There is room for improvement here dependong on the sounds that we are classifying. We can define our sounds by more, less, or different features than the ones in the template. These functions are from the "librosa" library, but there are other libraries and features within librosa available. Refer to the following for more on librosa: [Librosa Feature Extraction](https://librosa.github.io/librosa/feature.html).
+
+Credit to [Aaqib Saeed](http://aqibsaeed.github.io/2016-09-03-urban-sound-classification-part-1/) for the following descriptions:
+- **melspectrogram:** Compute a Mel-scaled power spectrogram
+- **mfcc:** Mel-frequency cepstral coefficients
+- **chorma-stft:** Compute a chromagram from a waveform or power spectrogram
+- **spectral_contrast:** Compute spectral contrast, using method defined in [1]
+- **tonnetz:** Computes the tonal centroid features (tonnetz), following the method of [2]
+
+```
+def extract_feature(file_name):
+    X, sample_rate = librosa.load(file_name)
+    stft = np.abs(librosa.stft(X))
+    mfccs = np.mean(librosa.feature.mfcc(y=X, sr=sample_rate, n_mfcc=40).T,axis=0)
+    chroma = np.mean(librosa.feature.chroma_stft(S=stft, sr=sample_rate).T,axis=0)
+    mel = np.mean(librosa.feature.melspectrogram(X, sr=sample_rate).T,axis=0)
+    contrast = np.mean(librosa.feature.spectral_contrast(S=stft, sr=sample_rate).T,axis=0)
+    tonnetz = np.mean(librosa.feature.tonnetz(y=librosa.effects.harmonic(X),
+    sr=sample_rate).T,axis=0)
+    return mfccs,chroma,mel,contrast,tonnetz
+```
+
 ### Neural Net Configuration
 
 
