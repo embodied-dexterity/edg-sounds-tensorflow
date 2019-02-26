@@ -56,7 +56,7 @@ Class 2:
 ```
 <img src="https://github.com/kris10akemi/edg-sounds-tensorflow/blob/master/sample_sound_sets_graph.png" width="400">
 
-Currently, the accuracy and the class that each class confused its test data with the most are displayed by visualize_results. Please email kafkaloff@berkeley.edu to request further visualization and data features. 
+The accuracy and the class that each class confused its test data with the most are displayed by visualize_results.
 
 To play around with more data, you can download the [Urban Sound Data set](https://urbansounddataset.weebly.com/). 
 
@@ -87,6 +87,46 @@ n_hidden_units_two = 300 # TODO: ADJUST ACCORDINGLY
 sd = 1 / np.sqrt(n_dim)
 learning_rate = 0.01 # TODO: ADJUST ACCORDINGLY
 ```
+
+### Gradient Descent Optimizer
+
+We use gradient descent to cluster similar sounds based on their features. Using derivatives, gradient descent moves in a direction that minimizes the cost as defined by cost_function.
+
+**cost_function:**
+- uses cross entropy where Y is binary indicator (whether or not prediction is correct) and y_ represents the predicted probability that that item is of correct class
+	* lower predicted prob -> smaller log(y_) -> increased cost (because negated)
+	* higher predicted prob -> larger log(y_) -> increased cost (because negated)
+
+### Prediction Model
+
+The following is the process of training the gradient optimizer for our model. The optimizer is trained based on all of the training data for a number of training_epochs, improving at each iteration. In the same session, we use the training model to make predictions about our test set (ts_features). From there, we compute the accuracy of the model's performance by comparing the prediction (y_pred) to the actual results (ts_labels).
+
+- **cost_history:** tracks the cost of each training epoch to plot the cost improvement later
+
+```
+cost_history = np.empty(shape=[1],dtype=float)
+y_true, y_pred = None, None
+with tf.Session() as sess:
+    sess.run(init)
+    for epoch in range(training_epochs):
+        _,cost = sess.run([optimizer,cost_function],feed_dict={X:tr_features,Y:tr_labels})
+        cost_history = np.append(cost_history,cost)
+
+    y_pred = sess.run(tf.argmax(y_,1),feed_dict={X: ts_features})
+    y_true = sess.run(tf.argmax(ts_labels,1))
+    
+    accuracy_output = sess.run(accuracy, feed_dict={X: ts_features,Y: ts_labels})
+    print("Test accuracy: {0:.3f}".format(accuracy_output))
+```
+
+### Visualizing Results
+
+Displays the following:
+- **accuracy per test:** how well the model performed on the test set for each class
+- **most confused with:** the class that another class' test set was confused with the most
+- **cost history plot:** how well the model improved over time
+
+Please email kafkaloff@berkeley.edu to request further visualization and data features. 
 
 ## Acknowledgments
 
