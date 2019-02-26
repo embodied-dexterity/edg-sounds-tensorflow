@@ -97,6 +97,14 @@ We use gradient descent to cluster similar sounds based on their features. Using
 	* lower predicted prob -> smaller log(y_) -> increased cost (because negated)
 	* higher predicted prob -> larger log(y_) -> increased cost (because negated)
 
+```
+cost_function = -tf.reduce_sum(Y * tf.log(y_))
+optimizer = tf.train.GradientDescentOptimizer(learning_rate).minimize(cost_function)
+
+correct_prediction = tf.equal(tf.argmax(y_,1), tf.argmax(Y,1))
+accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
+```
+
 ### Prediction Model
 
 The following is the process of training the gradient optimizer for our model. The optimizer is trained based on all of the training data for a number of training_epochs, improving at each iteration. In the same session, we use the training model to make predictions about our test set (ts_features). From there, we compute the accuracy of the model's performance by comparing the prediction (y_pred) to the actual results (ts_labels).
