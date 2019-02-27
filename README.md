@@ -162,10 +162,9 @@ learning_rate = 0.01 # TODO: ADJUST ACCORDINGLY
 
 We use gradient descent to cluster similar sounds based on their features. Using derivatives, gradient descent moves in a direction that minimizes the cost as defined by cost_function.
 
-**cost_function:**
-- uses cross entropy where Y is binary indicator (whether or not prediction is correct) and y_ represents the predicted probability that that item is of correct class
-	* lower predicted prob -> smaller log(y_) -> increased cost (because negated)
-	* higher predicted prob -> larger log(y_) -> increased cost (because negated)
+**cost_function:** uses cross entropy where Y is binary indicator (whether or not prediction is correct) and y_ represents the predicted probability that that item is of correct class
+* lower predicted prob -> smaller log(y_) -> increased cost (because negated)
+* higher predicted prob -> larger log(y_) -> increased cost (because negated)
 
 ```
 cost_function = -tf.reduce_sum(Y * tf.log(y_))
