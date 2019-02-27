@@ -64,7 +64,51 @@ To play around with more data, you can download the [Urban Sound Data set](https
 
 ### Template Configuration
 
+#### Neural Network Configuration
+
+Anything in sound_classification_template.py
+
+#### Sound File Configuration
+
+File organization is important when extracting sound data. For each class, there should training data and testing data. The training data is used to train our model and the testing data is used to measure how well our model classifies data based on the trained model. For example, if we have sound data for a dog barking. We should have two folders: dog bark training data (stored in "dog_bark_training" in this example) and dog bark testing data (stored in "dog_bark_testing" in this example). 
+
+Things to update:
+* **parent_dir** - refers to the parent directory
+	- parent directory is the file path preceding the folder in the sub directories (or "sub dirs")
+	- for example, from the location of our sound_classification_template.py, the "dog_bark_training" folder is actually stored in another folder 'sample_sound_sets_large', so when the code tries to extract sound data from there, we need to specify that parent_dir='sample_sound_sets_large' and it will extract from 'sample_sound_sets_large/dog_bark_training'
+* **tr_sub_dir_labels** - specifies your training data, each element is the name of the directory pointing to the training data for a certain class and the number refers to an arbitrary numeric identifier for that class
+* **ts_sub_dir_labels** - specifies your testing data, each element is the name of the directory pointing to the testing data for a certain class and the number refers to an arbitrary numeric identifier for that class (which should correspond to the training data numeric identifiers)
+
+Notes:
+* directory and folder are being used interchangeabley
+* if the folder is in your current directory, you can set parent_dir = '.'
+* if the folder is back a directory, you can set parent_dir = "../\<rest of file path from one directory back\>"
+
+Example (6 training sets, 6 test sets, 6 class types):
+```
+parent_dir = 'sample_sound_sets_large'
+
+tr_sub_dirs_labels = [["air_conditioner_training",0],
+                      ["car_horn_training",1],
+                      ["children_playing_training",2],
+                      ["dog_bark_training", 3],
+                      ["drilling_training", 4],
+                      ["engine_idling_training", 5]] # training set
+ts_sub_dirs_labels = [["air_conditioner_testing",0],
+                      ["car_horn_testing",1],
+                      ["children_playing_testing",2],
+                      ["dog_bark_testing", 3],
+                      ["drilling_testing", 4],
+                      ["engine_idling_testing", 5]] # test set
+```
+
 ### Formatting/Preparing Your Sound Data
+
+Sound data needs to be in \*.wav format. You may need to look up software to convert your audio files, such as:
+* [Movavi Audio Converter](https://www.movavi.com/audioconvertermac/?utm_expid=.Dd9UbW3MR5KXUxx-Hzzlcg.0&utm_referrer=https%3A%2F%2Fwww.google.com%2F) (legitimate, but limited acess and partial audio conversion)
+* [Online-Convert](https://audio.online-convert.com/convert-to-wav) (less legitimate, but full audio conversion)
+
+Ideally your sound data should be trimmed and cleaned to avoid extraneous or irrelevant sound in the training data. 
 
 ## Understanding the ML Sound Classification Process
 
