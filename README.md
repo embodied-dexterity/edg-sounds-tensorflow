@@ -105,8 +105,9 @@ ts_sub_dirs_labels = [["air_conditioner_testing",0],
 ### Formatting/Preparing Your Sound Data
 
 Sound data needs to be in \*.wav format. You may need to look up software to convert your audio files, such as:
-* [Movavi Audio Converter](https://www.movavi.com/audioconvertermac/?utm_expid=.Dd9UbW3MR5KXUxx-Hzzlcg.0&utm_referrer=https%3A%2F%2Fwww.google.com%2F) (legitimate, but limited acess and partial audio conversion)
-* [Online-Convert](https://audio.online-convert.com/convert-to-wav) (less legitimate, but full audio conversion)
+* iMovie: need to specify "Audio Only" and .wav when saving; this software is good for splitting up longer clips
+* [Movavi Audio Converter](https://www.movavi.com/audioconvertermac/?utm_expid=.Dd9UbW3MR5KXUxx-Hzzlcg.0&utm_referrer=https%3A%2F%2Fwww.google.com%2F): legitimate, but limited acess and partial audio conversion
+* [Online-Convert](https://audio.online-convert.com/convert-to-wav): less legitimate, but full audio conversion
 
 Ideally your sound data should be trimmed and cleaned to avoid extraneous or irrelevant sound in the training data. 
 
@@ -204,6 +205,10 @@ Displays the following:
 - **cost history plot:** how well the model improved over time
 
 Please email kafkaloff@berkeley.edu to request further visualization and data features. 
+
+# Experimenting with Coral Gripper Sounds
+
+
 
 ## Acknowledgments
 
