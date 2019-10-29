@@ -1,6 +1,6 @@
 # EDG Sound Classification Process
 
-The following describes everything that you'll need to know to start classifying sound data using Tensorflow with no prior coding experience necessary. Please email kafkaloff@berkeley.edu if you have any questions.
+The following describes everything that you'll need to know to start classifying sound data using Tensorflow (prior coding experience preferable, but not necessary!). Please email kafkaloff@berkeley.edu if you have any questions.
 
 ## Getting Started
 
@@ -209,8 +209,11 @@ Please email kafkaloff@berkeley.edu to request further visualization and data fe
 
 
 
-# Experimenting with Coral Gripper Sounds
+# Applying ML with Sounds - Experimenting with Coral Gripper Events
 
+Mission: When a gripper successfully grasps onto coral and loses grip, unique sounds are generated. Grip loss is accidental, unlike an intentional grip release where the gripper mouth opens. Grip loss is unpredictable and usually leaves the ROV in an unstable state where the grip is closed although it needs to be open to grasp the coral, thus the ROV should always reset prior to re-attempting or giving up. If we use sounds to predict a successful coral grasp or grip loss, we can partially automate the grasping process by predicting the coral gripper's state. 
+
+Lab experiments: 
 
 
 ## Acknowledgments
