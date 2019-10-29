@@ -209,7 +209,7 @@ Please email kafkaloff@berkeley.edu to request further visualization and data fe
 
 
 
-# Applying ML with Sounds - Experimenting with Coral Gripper Events
+# Experimenting with Coral Gripper Events
 
 ## Mission
 
