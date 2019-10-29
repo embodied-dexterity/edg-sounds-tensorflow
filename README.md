@@ -211,9 +211,29 @@ Please email kafkaloff@berkeley.edu to request further visualization and data fe
 
 # Applying ML with Sounds - Experimenting with Coral Gripper Events
 
-Mission: When a gripper successfully grasps onto coral and loses grip, unique sounds are generated. Grip loss is accidental, unlike an intentional grip release where the gripper mouth opens. Grip loss is unpredictable and usually leaves the ROV in an unstable state where the grip is closed although it needs to be open to grasp the coral, thus the ROV should always reset prior to re-attempting or giving up. If we use sounds to predict a successful coral grasp or grip loss, we can partially automate the grasping process by predicting the coral gripper's state. 
+## Mission
 
-Lab experiments: 
+When a gripper successfully grasps onto coral and loses grip, unique sounds are generated. Grip loss is accidental, unlike an intentional grip release where the gripper mouth opens. Grip loss is unpredictable and usually leaves the ROV in an unstable state, thus the ROV should always reset prior to re-attempting or giving up. If we use sounds to predict a successful coral grasp or grip loss, we can partially automate the grasping process by predicting the coral gripper's state. 
+
+## Lab Experiments
+
+### Current Progress
+
+There are currently two states that we are trying to distinguish: successful grip and grip loss. This is being tested in the lab by pushing the gripper onto the edge of Monica's pottery cup to simulate successful grip and then pulling it back off (without opening) to simulate grip loss. An iPhone is being used to record and iMovie is being used to split the sound clips into two classes with training and testing sets (.wav files). The current data has been uploaded and it is in the "coral_gripper" folder.
+
+This is mostly in the experimental phase right now and we aren't sure if sounds will be useful in making these event classifications, but given that vision is a manual operation and it is sometimes obstructed underwater, sounds could be helpful.
+
+### ML Training Considerations
+
+* Sound features are averaged over the duration of the clip, so any extraneous silence on the ends can affect the data
+* Volume may be a useful feature to consider adding
+* Collect more testing + training data
+* Adjust parameters (as specified in Neural Net Configuration)
+
+### Real-Life Application Considerations
+
+* Sounds are less audible underwater (may need a hydrophone)
+* There will be far more extraneous noise in the ocean
 
 
 ## Acknowledgments
